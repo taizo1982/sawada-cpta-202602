@@ -1,128 +1,1676 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ランディングページ</title>
-  <link rel="stylesheet" href="style.css">
-<!-- OGP -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>創業計画セルフチェック｜澤田匡央税理士事務所</title>
+<meta name="description" content="その創業計画、一度プロの視点で確認してみませんか？無料セルフ診断で準備状況を確認。澤田匡央税理士事務所が創業融資の計画整理を支援します。">
+<meta property="og:title" content="創業計画セルフチェック｜澤田匡央税理士事務所">
+<meta property="og:description" content="その創業計画、一度プロの視点で確認してみませんか？無料セルフ診断で準備状況を確認できます。">
+<meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ======================================================================
+   Reset & Base
+   ====================================================================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Noto Sans JP","游ゴシック体",YuGothic,"游ゴシック","Yu Gothic","ヒラギノ角ゴ ProN","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+  font-size:16px;
+  line-height:1.8;
+  letter-spacing:.05em;
+  font-feature-settings:"palt";
+  color:#1e293b;
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+a:focus,button:focus{
+  outline:2px solid #3182ce;
+  outline-offset:2px;
+}
+a:focus:not(:focus-visible),button:focus:not(:focus-visible){
+  outline:none;
+}
+a:focus-visible,button:focus-visible{
+  outline:2px solid #3182ce;
+  outline-offset:2px;
+}
+fieldset{border:none}
+
+/* ======================================================================
+   Layout
+   ====================================================================== */
+.container{
+  width:100%;
+  max-width:720px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+section{
+  padding:64px 0;
+}
+
+/* ======================================================================
+   Typography
+   ====================================================================== */
+h1,h2,h3{
+  font-weight:700;
+  line-height:1.4;
+  letter-spacing:.08em;
+}
+
+/* ======================================================================
+   Header
+   ====================================================================== */
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #e2e8f0;
+}
+.header .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:56px;
+}
+.header-logo{
+  display:flex;
+  align-items:center;
+  flex-shrink:1;
+  min-width:0;
+}
+.header-logo img{
+  height:28px;
+  width:auto;
+}
+.header-cta{
+  display:inline-flex;
+  align-items:center;
+  padding:8px 16px;
+  background:#1a365d;
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  border-radius:6px;
+  min-height:44px;
+  transition:background .2s;
+}
+.header-cta:hover{background:#2d4a7a}
+
+/* ======================================================================
+   Hero
+   ====================================================================== */
+.hero{
+  padding:56px 0 64px;
+  background:linear-gradient(180deg,#f0f4f8 0%,#fff 100%);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-150px;
+  right:-100px;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle,rgba(192,86,33,.04) 0%,transparent 60%);
+  border-radius:50%;
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  bottom:-180px;
+  left:-120px;
+  width:450px;
+  height:450px;
+  background:radial-gradient(circle,rgba(49,130,206,.04) 0%,transparent 60%);
+  border-radius:50%;
+  pointer-events:none;
+}
+.hero .container{
+  position:relative;
+  z-index:1;
+}
+.hero-title{
+  font-size:clamp(22px,5.8vw,32px);
+  color:#1a365d;
+  margin-bottom:24px;
+  line-height:1.6;
+}
+.hero-desc{
+  font-size:15px;
+  color:#475569;
+  margin-bottom:32px;
+  line-height:2.0;
+  text-wrap:pretty;
+}
+.hero-desc strong{
+  color:#1a365d;
+  font-weight:700;
+}
+.hero-sub{
+  font-size:15px;
+  color:#fff;
+  font-weight:700;
+  margin-bottom:32px;
+  line-height:2.0;
+  padding:16px 24px;
+  background:linear-gradient(135deg,#1a365d 0%,#2d4a7a 100%);
+  border-radius:12px;
+  border:none;
+  position:relative;
+}
+.hero-note{
+  font-size:13px;
+  color:#64748b;
+  margin-top:16px;
+}
+.btn-hero{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 36px;
+  background:linear-gradient(135deg,#c05621 0%,#d4682e 100%);
+  color:#fff;
+  font-size:16px;
+  font-weight:700;
+  border-radius:50px;
+  border:none;
+  cursor:pointer;
+  min-height:52px;
+  transition:transform .3s,background .3s;
+  letter-spacing:.05em;
+  position:relative;
+}
+.btn-hero:hover{
+  transform:translateY(-3px);
+}
+
+/* ======================================================================
+   Why Section
+   ====================================================================== */
+.why-section{
+  background:#fff;
+}
+.section-heading{
+  font-size:clamp(20px,5vw,24px);
+  color:#1a365d;
+  text-align:center;
+  margin-bottom:48px;
+  line-height:1.6;
+  padding-bottom:20px;
+  position:relative;
+}
+.section-heading::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:40px;
+  height:3px;
+  background:#c05621;
+  border-radius:2px;
+}
+.why-intro{
+  font-size:15px;
+  color:#475569;
+  margin-bottom:32px;
+  text-align:center;
+  line-height:2.0;
+}
+.why-columns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-bottom:32px;
+}
+.why-card{
+  background:#f8fafc;
+  border-radius:12px;
+  padding:24px 20px;
+  border:1px solid #e2e8f0;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:box-shadow .2s,transform .2s;
+}
+.why-card:hover{
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+  transform:translateY(-2px);
+}
+.why-card-title{
+  font-size:14px;
+  font-weight:700;
+  color:#64748b;
+  margin-bottom:12px;
+  padding-bottom:8px;
+  border-bottom:2px solid #cbd5e1;
+}
+.why-card-title--bank{border-bottom-color:#3182ce}
+.why-card-title--tax{border-bottom-color:#2f855a}
+.why-card ul{
+  font-size:14px;
+  color:#334155;
+  line-height:2.0;
+}
+.why-card li{
+  padding-left:1em;
+  text-indent:-1em;
+}
+.why-card li::before{
+  content:"・";
+}
+.why-bottom{
+  text-align:center;
+  font-size:15px;
+  color:#1a365d;
+  font-weight:700;
+  line-height:2.0;
+  padding:20px;
+  background:#f0f4f8;
+  border-radius:8px;
+  border-top:3px solid #1a365d;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+
+/* ======================================================================
+   Quiz Section
+   ====================================================================== */
+.quiz-section{
+  background:#f8fafc;
+}
+.quiz-lead{
+  text-align:center;
+  font-size:14px;
+  color:#64748b;
+  margin-bottom:32px;
+}
+.quiz-card{
+  background:#fff;
+  border-radius:12px;
+  padding:28px 24px;
+  margin-bottom:20px;
+  border:1px solid #e2e8f0;
+  transition:border-color .2s,box-shadow .2s,transform .2s;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.quiz-card:hover{
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  transform:translateY(-1px);
+}
+.quiz-card.has-error{
+  border-color:#e53e3e;
+  box-shadow:0 0 0 2px rgba(229,62,62,.15);
+}
+.quiz-card.has-error .quiz-error{
+  display:block;
+}
+.quiz-number{
+  display:inline-block;
+  font-size:12px;
+  font-weight:700;
+  color:#3182ce;
+  background:#ebf4ff;
+  padding:4px 12px;
+  border-radius:4px;
+  margin-bottom:12px;
+  letter-spacing:.05em;
+}
+.quiz-question{
+  font-size:17px;
+  font-weight:700;
+  color:#1a365d;
+  margin-bottom:12px;
+  line-height:1.6;
+  text-wrap:balance;
+}
+.quiz-detail{
+  font-size:14px;
+  color:#64748b;
+  line-height:2.0;
+  margin-bottom:20px;
+  text-wrap:pretty;
+}
+.quiz-options{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+.quiz-option{
+  position:relative;
+}
+.quiz-option input[type="radio"]{
+  position:absolute;
+  opacity:0;
+  width:0;
+  height:0;
+}
+.quiz-option label{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 8px;
+  border:2px solid #e2e8f0;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:600;
+  color:#64748b;
+  cursor:pointer;
+  transition:all .2s;
+  min-height:48px;
+  text-align:center;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.quiz-option label:hover{
+  border-color:#93c5fd;
+  background:#f0f7ff;
+}
+.quiz-option input[type="radio"]:checked + label{
+  border-color:#3182ce;
+  background:#ebf4ff;
+  color:#1a365d;
+}
+.quiz-option input[type="radio"]:focus-visible + label{
+  outline:2px solid #3182ce;
+  outline-offset:2px;
+}
+.quiz-error{
+  display:none;
+  font-size:13px;
+  color:#e53e3e;
+  margin-top:8px;
+  font-weight:600;
+}
+
+/* Submit button */
+.quiz-submit-wrap{
+  text-align:center;
+  margin-top:36px;
+}
+.btn-submit{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 40px;
+  background:#c05621;
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  min-height:56px;
+  width:100%;
+  max-width:400px;
+  transition:background .2s,transform .2s;
+  letter-spacing:.05em;
+}
+.btn-submit:hover{
+  background:#9c4221;
+  transform:translateY(-2px);
+}
+.btn-submit:focus-visible{
+  outline:2px solid #c05621;
+  outline-offset:2px;
+}
+
+/* ======================================================================
+   Result Section
+   ====================================================================== */
+.result-section{
+  background:#fff;
+  display:none;
+}
+.result-section.is-visible{
+  display:block;
+}
+.result-score{
+  text-align:center;
+  margin-bottom:36px;
+}
+.result-score-number{
+  font-size:48px;
+  font-weight:700;
+  color:#1a365d;
+  line-height:1.2;
+}
+.result-score-number span{
+  font-size:20px;
+  font-weight:400;
+  color:#64748b;
+}
+.result-score-label{
+  font-size:14px;
+  color:#64748b;
+  margin-top:4px;
+}
+.result-card{
+  display:none;
+  background:#f8fafc;
+  border-radius:16px;
+  padding:36px 28px;
+  border:1px solid #e2e8f0;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.result-card.is-active{
+  display:block;
+}
+.result-badge{
+  display:inline-block;
+  font-size:13px;
+  font-weight:700;
+  padding:6px 14px;
+  border-radius:20px;
+  margin-bottom:16px;
+}
+.result-card--a .result-badge{background:#c6f6d5;color:#276749}
+.result-card--b .result-badge{background:#bee3f8;color:#2a4365}
+.result-card--c .result-badge{background:#fefcbf;color:#744210}
+.result-card--d .result-badge{background:#fed7d7;color:#9b2c2c}
+
+.result-title{
+  font-size:clamp(18px,5vw,22px);
+  color:#1a365d;
+  margin-bottom:20px;
+  line-height:1.6;
+}
+.result-body{
+  font-size:15px;
+  color:#475569;
+  line-height:2.0;
+  margin-bottom:28px;
+}
+.result-body p{
+  margin-bottom:16px;
+}
+.result-body p:last-child{
+  margin-bottom:0;
+}
+.result-body strong{
+  color:#1a365d;
+  font-weight:700;
+}
+.result-list{
+  margin:8px 0 16px;
+}
+.result-list li{
+  padding-left:1em;
+  text-indent:-1em;
+}
+.result-list li::before{
+  content:"・";
+}
+.result-viewpoint{
+  font-size:13px;
+  color:#64748b;
+  font-weight:700;
+  margin-top:16px;
+  margin-bottom:4px;
+}
+.btn-result-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px 24px;
+  background:#c05621;
+  color:#fff;
+  font-size:16px;
+  font-weight:700;
+  border-radius:8px;
+  min-height:52px;
+  width:100%;
+  transition:background .2s,transform .2s;
+  letter-spacing:.05em;
+}
+.btn-result-cta:hover{
+  background:#9c4221;
+  transform:translateY(-2px);
+}
+
+.result-reset-wrap{
+  text-align:center;
+  margin-top:28px;
+}
+.btn-reset{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 24px;
+  background:transparent;
+  color:#64748b;
+  font-size:14px;
+  font-weight:600;
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  cursor:pointer;
+  min-height:44px;
+  transition:all .2s;
+}
+.btn-reset:hover{
+  background:#f8fafc;
+  color:#1e293b;
+  border-color:#94a3b8;
+}
+
+/* ======================================================================
+   Trouble Section
+   ====================================================================== */
+.trouble-section{
+  background:#1a365d;
+  position:relative;
+  overflow:hidden;
+}
+.trouble-section .section-heading{
+  color:#fff;
+}
+.trouble-section .section-heading::after{
+  background:#c05621;
+}
+.trouble-timeline{
+  max-width:560px;
+  margin:0 auto;
+  position:relative;
+  padding-left:40px;
+}
+.trouble-timeline::before{
+  content:"";
+  position:absolute;
+  left:15px;
+  top:8px;
+  bottom:8px;
+  width:3px;
+  background:linear-gradient(180deg,#c05621 0%,#e53e3e 100%);
+  border-radius:2px;
+}
+.trouble-item{
+  position:relative;
+  margin-bottom:24px;
+  padding:24px 28px;
+  background:rgba(255,255,255,.06);
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  transition:all .3s;
+}
+.trouble-item:hover{
+  background:rgba(255,255,255,.1);
+  transform:translateX(4px);
+}
+.trouble-item:last-child{
+  margin-bottom:0;
+}
+.trouble-item::before{
+  content:"";
+  position:absolute;
+  left:-30px;
+  top:28px;
+  width:13px;
+  height:13px;
+  background:#c05621;
+  border-radius:50%;
+  border:3px solid #1a365d;
+  box-shadow:0 0 0 2px #c05621;
+}
+.trouble-item:last-child::before{
+  width:15px;
+  height:15px;
+  left:-31px;
+  background:#e53e3e;
+  box-shadow:0 0 0 2px #e53e3e;
+}
+.trouble-label{
+  font-size:12px;
+  font-weight:700;
+  color:#c05621;
+  margin-bottom:6px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.trouble-item:last-child .trouble-label{
+  color:#fc8181;
+}
+.trouble-title{
+  font-size:17px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:8px;
+  line-height:1.5;
+  text-wrap:pretty;
+}
+.trouble-desc{
+  font-size:14px;
+  color:rgba(255,255,255,.7);
+  line-height:1.9;
+}
+.trouble-bottom{
+  text-align:center;
+  margin-top:36px;
+  font-size:15px;
+  color:#fff;
+  font-weight:700;
+  line-height:2.0;
+  padding:24px;
+  background:rgba(192,86,33,.15);
+  border-radius:12px;
+  border:1px solid rgba(192,86,33,.3);
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+/* ======================================================================
+   Message Section
+   ====================================================================== */
+.message-section{
+  background:linear-gradient(180deg,#fff 0%,#f8fafc 100%);
+  position:relative;
+}
+.message-content{
+  font-size:15px;
+  color:#475569;
+  line-height:2.2;
+  margin-bottom:36px;
+  max-width:560px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.message-content p{
+  margin-bottom:20px;
+  text-wrap:pretty;
+}
+.message-content p:last-child{
+  margin-bottom:0;
+}
+.message-opening-quote{
+  font-size:22px;
+  text-align:center;
+  position:relative;
+  padding:8px 0 24px;
+  color:#1a365d;
+  font-weight:700;
+  letter-spacing:.05em;
+}
+.message-content strong{
+  color:#1a365d;
+  font-weight:700;
+}
+.message-highlight{
+  font-size:18px;
+  color:#fff;
+  font-weight:700;
+  text-align:center;
+  padding:32px;
+  background:linear-gradient(135deg,#1a365d 0%,#2d4a7a 100%);
+  border-radius:16px;
+  margin:36px 0;
+  line-height:1.8;
+  box-shadow:0 2px 12px rgba(26,54,93,.12);
+  position:relative;
+  overflow:hidden;
+}
+.message-highlight::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
+  background:linear-gradient(90deg,#c05621,#d4682e);
+}
+.profile-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:16px;
+  padding:32px;
+  background:#fff;
+  border-radius:16px;
+  border:none;
+  margin-top:36px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:all .3s;
+}
+.profile-card:hover{
+  box-shadow:0 4px 16px rgba(0,0,0,.06);
+  transform:translateY(-3px);
+}
+.profile-card-photo{
+  width:88px;
+  height:88px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+  box-shadow:0 0 0 4px #fff,0 0 0 6px #c05621;
+}
+.profile-card-info{
+  font-size:13px;
+  color:#64748b;
+  line-height:1.7;
+}
+.profile-card-office{
+  font-size:12px;
+  color:#64748b;
+  margin-bottom:2px;
+}
+.profile-card-title{
+  font-size:11px;
+  color:#94a3b8;
+  margin-bottom:4px;
+}
+.profile-card-name{
+  font-size:16px;
+  font-weight:700;
+  color:#1a365d;
+}
+
+/* ======================================================================
+   Office Section
+   ====================================================================== */
+.office-section{
+  background:#f8fafc;
+}
+.office-name{
+  font-size:14px;
+  color:#64748b;
+  text-align:center;
+  margin-bottom:8px;
+  font-weight:600;
+}
+.office-body{
+  font-size:15px;
+  color:#475569;
+  line-height:2.0;
+  text-align:center;
+}
+.office-body strong{
+  color:#1a365d;
+  font-weight:700;
+}
+.office-emphasis{
+  display:inline-block;
+  background:linear-gradient(transparent 60%,#fefcbf 60%);
+}
+
+/* ======================================================================
+   Flow Section
+   ====================================================================== */
+.flow-section{
+  background:#fff;
+}
+.flow-steps{
+  max-width:480px;
+  margin:0 auto 32px;
+}
+.flow-step{
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+  padding:20px 0;
+  position:relative;
+}
+.flow-step:not(:last-child){
+  border-bottom:none;
+  padding-bottom:28px;
+}
+.flow-step:not(:last-child)::before{
+  content:"";
+  position:absolute;
+  left:17px;
+  top:56px;
+  bottom:8px;
+  width:2px;
+  background:#e2e8f0;
+}
+.flow-step:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  left:13px;
+  bottom:0;
+  width:0;
+  height:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:6px solid #e2e8f0;
+}
+.flow-step-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  background:#1a365d;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  border-radius:50%;
+  flex-shrink:0;
+}
+.flow-step-text{
+  font-size:15px;
+  font-weight:600;
+  color:#1e293b;
+  padding-top:6px;
+  line-height:1.6;
+}
+.flow-note{
+  text-align:center;
+  font-size:14px;
+  color:#64748b;
+  font-weight:600;
+}
+
+/* ======================================================================
+   Final CTA
+   ====================================================================== */
+.final-section{
+  background:linear-gradient(180deg,#f0f4f8 0%,#e8edf4 100%);
+  text-align:center;
+}
+.final-title{
+  font-size:clamp(18px,5vw,22px);
+  color:#1a365d;
+  margin-bottom:20px;
+  line-height:1.6;
+}
+.final-body{
+  font-size:15px;
+  color:#475569;
+  line-height:2.0;
+  margin-bottom:32px;
+}
+.btn-final{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 40px;
+  background:#c05621;
+  color:#fff;
+  font-size:17px;
+  font-weight:700;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  min-height:56px;
+  width:100%;
+  max-width:400px;
+  transition:background .2s,transform .2s;
+  letter-spacing:.05em;
+}
+.btn-final:hover{
+  background:#9c4221;
+  transform:translateY(-2px);
+}
+
+/* ======================================================================
+   Footer
+   ====================================================================== */
+.footer{
+  background:#1a365d;
+  color:#fff;
+  padding:40px 0 32px;
+  text-align:center;
+}
+.footer-logo{
+  margin-bottom:20px;
+}
+.footer-logo img{
+  height:24px;
+  width:auto;
+  margin:0 auto;
+}
+.footer-info{
+  margin-bottom:20px;
+  font-size:13px;
+  line-height:2.0;
+  opacity:.85;
+}
+.footer-info-item{
+  margin-bottom:2px;
+}
+.footer-info-label{
+  display:inline-block;
+  min-width:5em;
+  text-align:right;
+  margin-right:.5em;
+  opacity:.7;
+}
+.footer-hp{
+  display:inline-block;
+  margin-bottom:16px;
+  font-size:13px;
+  opacity:.7;
+  border-bottom:1px solid rgba(255,255,255,.3);
+  transition:opacity .2s;
+}
+.footer-hp:hover{opacity:1}
+.footer-copy{
+  font-size:12px;
+  opacity:.7;
+}
+.footer-links{
+  margin-top:12px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px 20px;
+}
+.footer-links a{
+  font-size:12px;
+  opacity:.6;
+  transition:opacity .2s;
+}
+.footer-links a:hover{opacity:1}
+
+/* ======================================================================
+   Scroll Animation
+   ====================================================================== */
+.fade-in{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.fade-in.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.fade-in-delay-1{transition-delay:.2s}
+.fade-in-delay-2{transition-delay:.35s}
+
+/* ======================================================================
+   Utility
+   ====================================================================== */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* ======================================================================
+   Responsive
+   ====================================================================== */
+@media(max-width:768px){
+  .why-columns{
+    grid-template-columns:1fr;
+  }
+  .why-card:hover,
+  .quiz-card:hover,
+  .trouble-item:hover,
+  .profile-card:hover{
+    transform:none;
+  }
+  .btn-hero:hover,
+  .btn-submit:hover,
+  .btn-result-cta:hover,
+  .btn-final:hover{
+    transform:none;
+  }
+  .quiz-card{
+    padding:24px 16px;
+  }
+  .quiz-question{
+    font-size:16px;
+  }
+  .result-card{
+    padding:28px 20px;
+  }
+  .quiz-options{
+    gap:6px;
+  }
+  .quiz-option label{
+    font-size:13px;
+    padding:10px 6px;
+  }
+  .trouble-timeline{
+    padding-left:32px;
+  }
+  .trouble-item{
+    padding:18px 20px;
+  }
+  .trouble-item:hover{
+    transform:none;
+  }
+  .trouble-item::before{
+    width:11px;
+    height:11px;
+    left:-26px;
+  }
+  .trouble-item:last-child::before{
+    width:13px;
+    height:13px;
+    left:-27px;
+  }
+  .flow-step:not(:last-child)::before,
+  .flow-step:not(:last-child)::after{
+    display:none;
+  }
+  .flow-step:not(:last-child){
+    border-bottom:1px dashed #e2e8f0;
+    padding-bottom:20px;
+  }
+  .profile-card-photo{
+    width:76px;
+    height:76px;
+  }
+  .hero::before{
+    width:300px;
+    height:300px;
+  }
+  .hero::after{
+    width:250px;
+    height:250px;
+  }
+  .message-highlight{
+    padding:24px 20px;
+    font-size:16px;
+  }
+  .footer-info-label{
+    display:block;
+    text-align:center;
+    min-width:auto;
+    margin-right:0;
+  }
+}
+@media(max-width:375px){
+  .hero-title{
+    font-size:20px;
+  }
+  .hero-desc,
+  .trouble-title,
+  .message-content p{
+    letter-spacing:.02em;
+  }
+  .quiz-options{
+    grid-template-columns:1fr;
+  }
+  .quiz-card{
+    padding:20px 14px;
+  }
+  .result-card{
+    padding:24px 16px;
+  }
+}
+@media(min-width:769px){
+  .sp-only{display:none}
+  .container{
+    max-width:680px;
+  }
+  .hero{
+    padding:80px 0 88px;
+  }
+  .hero::before{
+    width:600px;
+    height:600px;
+  }
+  .hero::after{
+    width:500px;
+    height:500px;
+  }
+  section{
+    padding:88px 0;
+  }
+}
+</style>
 </head>
 <body>
-  <!-- ヘッダー -->
-  <header class="header">
-    <div class="container">
-      <img src="images/logo.png" alt="ロゴ" class="logo">
-      <a href="#cta" class="header-cta" data-cv="header-click">お問い合わせ</a>
-    </div>
-  </header>
 
-  <!-- ヒーロー -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="hero-title">キャッチコピーをここに</h1>
-      <p class="hero-subtitle">サブキャッチをここに入れます</p>
-      <a href="#cta" class="btn btn-primary" data-cv="hero-click">今すぐ申し込む</a>
-    </div>
-  </section>
+<!-- ヘッダー -->
+<header class="header">
+  <div class="container">
+    <a href="#top" class="header-logo"><img src="images/sawada-logo.png" alt="澤田匡央税理士事務所" width="280" height="30"></a>
+    <a href="https://sawada-cpta.com/contact/" class="header-cta" data-cv="header-click">無料相談</a>
+  </div>
+</header>
 
-  <!-- 課題セクション -->
-  <section class="pain">
-    <div class="container">
-      <h2 class="section-title">こんなお悩みありませんか？</h2>
-      <ul class="pain-list">
-        <li class="pain-item">課題1をここに</li>
-        <li class="pain-item">課題2をここに</li>
-        <li class="pain-item">課題3をここに</li>
-      </ul>
+<!-- ヒーロー -->
+<main>
+<section class="hero" id="top">
+  <div class="container">
+    <h1 class="hero-title">その創業計画、<br class="sp-only">一度プロの視点で<br>確認してみませんか？</h1>
+    <p class="hero-desc">
+      事業アイデアも、熱意も、覚悟もある。<br>
+      でも、その計画は――<br>
+      <strong>融資基準で通る設計</strong>になっているか。<br>
+      <strong>資金が回り続ける設計</strong>になっているか。
+    </p>
+    <div class="hero-sub">
+      融資が通る計画と、事業が続く計画は<br>必ずしも同じではありません。
     </div>
-  </section>
+    <a href="#quiz" class="btn-hero" data-cv="hero-click">無料セルフ診断をはじめる&#x25B6;</a>
+    <p class="hero-note">個人情報の入力は不要。その場ですぐ結果がわかります</p>
+  </div>
+</section>
 
-  <!-- 解決策セクション -->
-  <section class="solution">
-    <div class="container">
-      <h2 class="section-title">その悩み、解決できます</h2>
-      <div class="solution-steps">
-        <div class="step">
-          <span class="step-number">1</span>
-          <h3 class="step-title">ステップ1</h3>
-          <p class="step-description">説明をここに</p>
-        </div>
-        <div class="step">
-          <span class="step-number">2</span>
-          <h3 class="step-title">ステップ2</h3>
-          <p class="step-description">説明をここに</p>
-        </div>
-        <div class="step">
-          <span class="step-number">3</span>
-          <h3 class="step-title">ステップ3</h3>
-          <p class="step-description">説明をここに</p>
-        </div>
+<!-- なぜ「確認」が必要なのか -->
+<section class="why-section" id="why">
+  <div class="container">
+    <h2 class="section-heading fade-in">なぜ「確認」が必要なのか</h2>
+    <p class="why-intro fade-in">
+      創業前はやることが多く、<br>数字の設計は後回しになりがちです。<br>しかし金融機関が確認するのは<br>まさにその「数字」の部分です。
+    </p>
+    <div class="why-columns fade-in">
+      <div class="why-card">
+        <div class="why-card-title why-card-title--bank">金融機関が確認するのは</div>
+        <ul>
+          <li>売上予測の根拠</li>
+          <li>返済可能性</li>
+          <li>自己資金の形成過程</li>
+          <li>事業の実現可能性</li>
+        </ul>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title why-card-title--tax">税理士が確認するのは</div>
+        <ul>
+          <li>創業後6か月の資金推移</li>
+          <li>税金や社会保険料の支払いタイミング</li>
+          <li>利益とキャッシュ残高のズレ</li>
+        </ul>
       </div>
     </div>
-  </section>
+    <div class="why-bottom fade-in">
+      融資が通ることと、資金が続くことは別問題です。<br>創業前の今だからこそ、整えられます。
+    </div>
+  </div>
+</section>
 
-  <!-- お客様の声 -->
-  <section class="testimonials">
-    <div class="container">
-      <h2 class="section-title">お客様の声</h2>
-      <div class="testimonial-list">
-        <div class="testimonial">
-          <p class="testimonial-text">「感想をここに入れます」</p>
-          <p class="testimonial-author">30代 女性</p>
+<!-- 創業計画セルフチェック -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <h2 class="section-heading">創業計画セルフチェック（全5問）</h2>
+    <p class="quiz-lead">あなたの準備状況を確認してみましょう。</p>
+
+    <form id="quizForm" novalidate>
+      <!-- 質問1 -->
+      <fieldset class="quiz-card" id="q1-card">
+        <legend class="sr-only">質問1</legend>
+        <span class="quiz-number">質問 1</span>
+        <p class="quiz-question">売上予測の根拠を説明できますか？</p>
+        <p class="quiz-detail">
+          客単価・想定客数・集客導線まで<br>具体的に示せますか？
+        </p>
+        <div class="quiz-options" role="radiogroup" aria-label="質問1の回答">
+          <div class="quiz-option">
+            <input type="radio" name="q1" id="q1-yes" value="yes">
+            <label for="q1-yes">はい</label>
+          </div>
+          <div class="quiz-option">
+            <input type="radio" name="q1" id="q1-some" value="some">
+            <label for="q1-some">ある程度</label>
+          </div>
+          <div class="quiz-option">
+            <input type="radio" name="q1" id="q1-no" value="no">
+            <label for="q1-no">いいえ</label>
+          </div>
         </div>
-        <div class="testimonial">
-          <p class="testimonial-text">「感想をここに入れます」</p>
-          <p class="testimonial-author">40代 男性</p>
+        <p class="quiz-error" id="q1-error" role="alert">この質問に回答してください</p>
+      </fieldset>
+
+      <!-- 質問2 -->
+      <fieldset class="quiz-card" id="q2-card">
+        <legend class="sr-only">質問2</legend>
+        <span class="quiz-number">質問 2</span>
+        <p class="quiz-question">自己資金は計画的な積み上げで<br>証明できますか？</p>
+        <p class="quiz-detail">
+          通帳履歴で説明できますか？
+        </p>
+        <div class="quiz-options" role="radiogroup" aria-label="質問2の回答">
+          <div class="quiz-option">
+            <input type="radio" name="q2" id="q2-yes" value="yes">
+            <label for="q2-yes">はい</label>
+          </div>
+          <div class="quiz-option">
+            <input type="radio" name="q2" id="q2-some" value="some">
+            <label for="q2-some">ある程度</label>
+          </div>
+          <div class="quiz-option">
+            <input type="radio" name="q2" id="q2-no" value="no">
+            <label for="q2-no">いいえ</label>
+          </div>
         </div>
+        <p class="quiz-error" id="q2-error" role="alert">この質問に回答してください</p>
+      </fieldset>
+
+      <!-- 質問3 -->
+      <fieldset class="quiz-card" id="q3-card">
+        <legend class="sr-only">質問3</legend>
+        <span class="quiz-number">質問 3</span>
+        <p class="quiz-question">返済原資を数値で示せますか？</p>
+        <p class="quiz-detail">
+          毎月いくら返済可能か、<br>利益ベースで示せますか？
+        </p>
+        <div class="quiz-options" role="radiogroup" aria-label="質問3の回答">
+          <div class="quiz-option">
+            <input type="radio" name="q3" id="q3-yes" value="yes">
+            <label for="q3-yes">はい</label>
+          </div>
+          <div class="quiz-option">
+            <input type="radio" name="q3" id="q3-some" value="some">
+            <label for="q3-some">ある程度</label>
+          </div>
+          <div class="quiz-option">
+            <input type="radio" name="q3" id="q3-no" value="no">
+            <label for="q3-no">いいえ</label>
+          </div>
+        </div>
+        <p class="quiz-error" id="q3-error" role="alert">この質問に回答してください</p>
+      </fieldset>
+
+      <!-- 質問4 -->
+      <fieldset class="quiz-card" id="q4-card">
+        <legend class="sr-only">質問4</legend>
+        <span class="quiz-number">質問 4</span>
+        <p class="quiz-question">生活費を含めた<br>資金繰り計画がありますか？</p>
+        <p class="quiz-detail">
+          生活費・税金・社会保険料を<br>織り込んでいますか？
+        </p>
+        <div class="quiz-options" role="radiogroup" aria-label="質問4の回答">
+          <div class="quiz-option">
+            <input type="radio" name="q4" id="q4-yes" value="yes">
+            <label for="q4-yes">はい</label>
+          </div>
+          <div class="quiz-option">
+            <input type="radio" name="q4" id="q4-some" value="some">
+            <label for="q4-some">ある程度</label>
+          </div>
+          <div class="quiz-option">
+            <input type="radio" name="q4" id="q4-no" value="no">
+            <label for="q4-no">いいえ</label>
+          </div>
+        </div>
+        <p class="quiz-error" id="q4-error" role="alert">この質問に回答してください</p>
+      </fieldset>
+
+      <!-- 質問5 -->
+      <fieldset class="quiz-card" id="q5-card">
+        <legend class="sr-only">質問5</legend>
+        <span class="quiz-number">質問 5</span>
+        <p class="quiz-question">なぜあなたの事業でなければ<br>ならないのか説明できますか？</p>
+        <p class="quiz-detail">
+          競合との差別化や強みを<br>言語化できますか？
+        </p>
+        <div class="quiz-options" role="radiogroup" aria-label="質問5の回答">
+          <div class="quiz-option">
+            <input type="radio" name="q5" id="q5-yes" value="yes">
+            <label for="q5-yes">はい</label>
+          </div>
+          <div class="quiz-option">
+            <input type="radio" name="q5" id="q5-some" value="some">
+            <label for="q5-some">ある程度</label>
+          </div>
+          <div class="quiz-option">
+            <input type="radio" name="q5" id="q5-no" value="no">
+            <label for="q5-no">いいえ</label>
+          </div>
+        </div>
+        <p class="quiz-error" id="q5-error" role="alert">この質問に回答してください</p>
+      </fieldset>
+
+      <div class="quiz-submit-wrap">
+        <button type="submit" class="btn-submit" data-cv="diagnosis-submit">診断結果を見る&#x25B6;</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 診断結果 -->
+<section class="result-section" id="result">
+  <div class="container">
+    <h2 class="section-heading">診断結果</h2>
+
+    <div class="result-score">
+      <div class="result-score-number" id="scoreDisplay">0<span> / 10</span></div>
+      <p class="result-score-label">診断スコア</p>
+    </div>
+
+    <!-- 5点 -->
+    <div class="result-card result-card--a" id="result-a">
+      <span class="result-badge">【10点／10点】</span>
+      <h3 class="result-title">融資申請に進める水準です</h3>
+      <div class="result-body">
+        <p>融資審査で確認される主要項目は整理されています。</p>
+        <p>ただし、計画通りにいかないケースへの耐久性――<br>たとえば<strong>売上が想定の7割にとどまった場合</strong>や、<strong>入金が1か月遅れた場合</strong>にも資金が回るかどうか。</p>
+        <p>この「想定外への備え」まで確認できていれば、<br>融資後の経営も安定しやすくなります。</p>
+        <p>提出前に第三者視点で最終確認することで、<br>計画の精度をさらに高められます。</p>
+      </div>
+      <a href="https://sawada-cpta.com/contact/" class="btn-result-cta" data-cv="cta-click">最終確認の無料面談を申し込む&#x25B6;</a>
+    </div>
+
+    <!-- 3-4点 -->
+    <div class="result-card result-card--b" id="result-b">
+      <span class="result-badge">【7〜9点／10点】</span>
+      <h3 class="result-title">方向性は合っています。<br>あと一歩の整合性を整えましょう</h3>
+      <div class="result-body">
+        <p>計画の骨子は見えています。<br>ただし、融資審査では<strong>「あと一歩の曖昧さ」</strong>が否決理由になることがあります。</p>
+        <ul class="result-list">
+          <li>売上根拠の裏付けが弱い</li>
+          <li>返済原資の計算が未確定</li>
+          <li>生活費との整合性が取れていない</li>
+        </ul>
+        <p>こうした曖昧さが残ったまま申請すると、<br>金融機関からマイナス評価を受ける可能性があります。</p>
+        <p>税理士の視点で資金繰りまで確認することで、<br><strong>「通ったが資金が足りない」</strong>という状態を防げます。</p>
+      </div>
+      <a href="https://sawada-cpta.com/contact/" class="btn-result-cta" data-cv="cta-click">計画整理の無料相談を申し込む&#x25B6;</a>
+    </div>
+
+    <!-- 1-2点 -->
+    <div class="result-card result-card--c" id="result-c">
+      <span class="result-badge">【4〜6点／10点】</span>
+      <h3 class="result-title">計画の再設計が必要な段階です</h3>
+      <div class="result-body">
+        <p>事業への想いはしっかりあるはずです。<br>ただ、現状では融資審査・創業後の資金繰りの<br>両面で不安が残ります。</p>
+        <p>特に見落とされやすいのが、</p>
+        <ul class="result-list">
+          <li>社会保険料の負担（想定以上に大きい）</li>
+          <li>住民税の支払い（前年所得ベース）</li>
+          <li>予備資金の確保</li>
+        </ul>
+        <p>です。今の段階で整えれば、<br>状況は大きく改善できます。</p>
+      </div>
+      <a href="https://sawada-cpta.com/contact/" class="btn-result-cta" data-cv="cta-click">基礎から整理する無料相談を申し込む&#x25B6;</a>
+    </div>
+
+    <!-- 0点 -->
+    <div class="result-card result-card--d" id="result-d">
+      <span class="result-badge">【0〜3点／10点】</span>
+      <h3 class="result-title">まだアイデア段階です。<br>でも、ここからが一番自由です</h3>
+      <div class="result-body">
+        <p>現在は構想段階に近い状態です。<br>しかし、<strong>今の段階が最も設計の自由度が高い</strong>とも言えます。</p>
+        <ul class="result-list">
+          <li>必要資金の総額</li>
+          <li>収益構造</li>
+          <li>固定費と生活費の整理</li>
+        </ul>
+        <p>を順序立てて設計すれば、<br>漠然としたアイデアを<strong>戦略のある創業計画</strong>に変えることは可能です。</p>
+      </div>
+      <a href="https://sawada-cpta.com/contact/" class="btn-result-cta" data-cv="cta-click">創業準備の進め方を相談する&#x25B6;</a>
+    </div>
+
+    <div class="result-reset-wrap">
+      <button type="button" class="btn-reset" id="resetBtn">もう一度診断する</button>
+    </div>
+  </div>
+</section>
+
+<!-- よくある創業初期の資金トラブル -->
+<section class="trouble-section" id="trouble">
+  <div class="container">
+    <h2 class="section-heading fade-in">よくある創業初期の資金トラブル</h2>
+    <div class="trouble-timeline fade-in">
+      <div class="trouble-item">
+        <p class="trouble-label">創業3か月目</p>
+        <p class="trouble-title">売上が想定より伸びない</p>
+        <p class="trouble-desc">集客導線が確立する前に固定費の支払いが始まり、資金が減り続ける。想定の7割以下の売上が続くケースは珍しくありません。</p>
+      </div>
+      <div class="trouble-item">
+        <p class="trouble-label">創業4か月目</p>
+        <p class="trouble-title">社会保険料の支払いが始まる</p>
+        <p class="trouble-desc">法人化した場合、社会保険料は想像以上の負担になります。役員報酬の約30%が毎月発生することを見落としがちです。</p>
+      </div>
+      <div class="trouble-item">
+        <p class="trouble-label">創業6か月目</p>
+        <p class="trouble-title">資金残高が急減する</p>
+        <p class="trouble-desc">売上は立っているのに、税金・社会保険料・生活費が重なり、通帳残高が一気に減少。追加融資の検討を迫られるケースもあります。</p>
+      </div>
+      <div class="trouble-item">
+        <p class="trouble-label">よくある相談</p>
+        <p class="trouble-title">「利益が出ているのに資金がない」</p>
+        <p class="trouble-desc">利益＝手元資金ではありません。売掛金の回収タイミング、税金の支払い時期、減価償却の仕組みなど、利益とキャッシュのズレを理解していないと、黒字でも資金ショートは起こり得ます。</p>
       </div>
     </div>
-  </section>
+    <div class="trouble-bottom fade-in">
+      これらはすべて、<br>創業前の計画段階で防げるトラブルです。
+    </div>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="faq">
-    <div class="container">
-      <h2 class="section-title">よくあるご質問</h2>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary class="faq-question">質問1をここに</summary>
-          <p class="faq-answer">回答をここに入れます。</p>
-        </details>
-        <details class="faq-item">
-          <summary class="faq-question">質問2をここに</summary>
-          <p class="faq-answer">回答をここに入れます。</p>
-        </details>
+<!-- 代表税理士からのメッセージ -->
+<section class="message-section" id="message">
+  <div class="container">
+    <h2 class="section-heading fade-in">代表税理士からのメッセージ</h2>
+    <div class="message-content fade-in">
+      <p class="message-opening-quote">「通ったのに、続かなかった。」</p>
+      <p>これは、私が創業支援の現場で何度も<span style="display:inline-block">見てきた光景です。</span></p>
+      <p>融資は無事に通った。<br>でも半年後、資金繰りに追われている。<br>「こんなはずじゃなかった」と相談に来られる方が<br>少なくありません。</p>
+      <p>原因の多くは、<strong>融資を通すことだけを目的にした計画</strong>にあります。</p>
+      <p>数字の辻褄を合わせれば、融資は通ることがあります。<br>しかしそれは、事業が続くことを保証するものではありません。</p>
+      <p>大切なのは、<strong>融資後も資金が回り続ける設計</strong>です。<br>売上が想定を下回っても、税金や社会保険料の支払いが重なっても、<br>事業を続けていける計画になっているかどうか。</p>
+    </div>
+    <div class="message-highlight fade-in">
+      通る計画ではなく、続く計画を<br>一緒につくりませんか。
+    </div>
+    <div class="profile-card fade-in">
+      <picture>
+        <source srcset="images/sawada-profile.avif" type="image/avif">
+        <source srcset="images/sawada-profile.webp" type="image/webp">
+        <img src="images/sawada-profile.jpg" alt="澤田 匡央" class="profile-card-photo" width="80" height="80" loading="lazy">
+      </picture>
+      <div class="profile-card-info">
+        <p class="profile-card-office">澤田匡央税理士事務所</p>
+        <p class="profile-card-title">代表税理士</p>
+        <p class="profile-card-name">澤田 匡央</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="cta" id="cta">
-    <div class="container">
-      <h2 class="cta-title">今すぐお申し込みください</h2>
-      <p class="cta-description">お気軽にお問い合わせください</p>
-      <a href="https://example.com/form" class="btn btn-primary btn-large" data-cv="cta-click">
-        申し込みフォームへ
-      </a>
-      <a href="tel:090-0000-0000" class="btn btn-secondary" data-cv="tel">
-        電話で問い合わせ
-      </a>
+<!-- 事務所紹介 -->
+<section class="office-section" id="about">
+  <div class="container">
+    <h2 class="section-heading fade-in">澤田匡央税理士事務所の創業支援</h2>
+    <div class="office-body fade-in">
+      <p>近江八幡税務署管轄エリアを中心に、<br>創業前の計画整理と<br>融資準備を支援しています。</p>
+      <br>
+      <p>単なる申請サポートではなく、<br><span class="office-emphasis"><strong>創業後も資金が回る計画を整えること</strong></span><br>を重視しています。</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- フッター -->
-  <footer class="footer">
-    <div class="container">
-      <p class="copyright">&copy; 2025 会社名. All rights reserved.</p>
-      <nav class="footer-nav">
-        <a href="/privacy">プライバシーポリシー</a>
-        <a href="/terms">利用規約</a>
-        <a href="/tokusho">特定商取引法に基づく表記</a>
-      </nav>
+<!-- 面談の流れ -->
+<section class="flow-section">
+  <div class="container">
+    <h2 class="section-heading fade-in">面談の流れ</h2>
+    <div class="flow-steps fade-in">
+      <div class="flow-step">
+        <span class="flow-step-number">1</span>
+        <p class="flow-step-text">現状ヒアリング</p>
+      </div>
+      <div class="flow-step">
+        <span class="flow-step-number">2</span>
+        <p class="flow-step-text">数値整合性の確認</p>
+      </div>
+      <div class="flow-step">
+        <span class="flow-step-number">3</span>
+        <p class="flow-step-text">税務・資金繰りリスクの整理</p>
+      </div>
+      <div class="flow-step">
+        <span class="flow-step-number">4</span>
+        <p class="flow-step-text">今後の具体的な進め方のご提案</p>
+      </div>
     </div>
-  </footer>
+    <p class="flow-note">無理な契約をお願いすることはありません。</p>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- 最後のCTA -->
+<section class="final-section" id="contact">
+  <div class="container">
+    <h2 class="final-title fade-in">最後に</h2>
+    <div class="final-body fade-in">
+      <p>創業は、大きな決断です。<br>数字を整えて進むか。<br>不安を抱えたまま進むか。<br>その違いは、半年後に現れます。</p>
+    </div>
+    <a href="https://sawada-cpta.com/contact/" class="btn-final" data-cv="cta-click">無料相談を申し込む&#x25B6;</a>
+  </div>
+</section>
+</main>
+
+<!-- フッター -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo"><img src="images/sawada-logo-wh.png" alt="澤田匡央税理士事務所" width="280" height="30"></div>
+    <div class="footer-info">
+      <p class="footer-info-item"><span class="footer-info-label">代表</span>澤田 匡央（さわだ ただちか）</p>
+      <p class="footer-info-item"><span class="footer-info-label">所在地</span>〒523-0894 滋賀県近江八幡市中村町 20-15 コルージャビル 3F</p>
+      <p class="footer-info-item"><span class="footer-info-label">TEL</span><a href="tel:0748-36-2817" data-cv="tel">0748-36-2817</a></p>
+      <p class="footer-info-item"><span class="footer-info-label">営業時間</span>平日 9:00〜18:00</p>
+    </div>
+    <a href="https://sawada-cpta.com/" class="footer-hp" target="_blank" rel="noopener">公式HP: sawada-cpta.com</a>
+    <p class="footer-copy">&copy; 2026 澤田匡央税理士事務所</p>
+    <nav class="footer-links">
+      <a href="/privacy">プライバシーポリシー</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  var form = document.getElementById('quizForm');
+  var resultSection = document.getElementById('result');
+  var scoreDisplay = document.getElementById('scoreDisplay');
+  var resetBtn = document.getElementById('resetBtn');
+  var questions = ['q1','q2','q3','q4','q5'];
+
+  // 回答選択時にエラー状態をクリア
+  questions.forEach(function(q){
+    var radios = document.querySelectorAll('input[name="' + q + '"]');
+    radios.forEach(function(radio){
+      radio.addEventListener('change', function(){
+        var card = document.getElementById(q + '-card');
+        if(card) card.classList.remove('has-error');
+      });
+    });
+  });
+
+  // 診断送信
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var score = 0;
+    var hasError = false;
+    var firstError = null;
+
+    questions.forEach(function(q){
+      var card = document.getElementById(q + '-card');
+      var selected = document.querySelector('input[name="' + q + '"]:checked');
+
+      if(!selected){
+        hasError = true;
+        if(card) card.classList.add('has-error');
+        if(!firstError) firstError = card;
+      } else {
+        if(card) card.classList.remove('has-error');
+        if(selected.value === 'yes'){
+          score += 2;
+        } else if(selected.value === 'some'){
+          score += 1;
+        }
+      }
+    });
+
+    if(hasError){
+      if(firstError){
+        firstError.scrollIntoView({behavior:'smooth', block:'center'});
+      }
+      return;
+    }
+
+    // スコア表示
+    scoreDisplay.innerHTML = score + '<span> / 10</span>';
+
+    // 全結果を非表示
+    var allResults = document.querySelectorAll('.result-card');
+    allResults.forEach(function(r){ r.classList.remove('is-active'); });
+
+    // 該当結果を表示
+    var resultId;
+    if(score === 10){
+      resultId = 'result-a';
+    } else if(score >= 7){
+      resultId = 'result-b';
+    } else if(score >= 4){
+      resultId = 'result-c';
+    } else {
+      resultId = 'result-d';
+    }
+
+    var activeResult = document.getElementById(resultId);
+    if(activeResult) activeResult.classList.add('is-active');
+
+    // 結果セクション表示
+    resultSection.classList.add('is-visible');
+
+    // 結果セクションへスクロール
+    setTimeout(function(){
+      resultSection.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 100);
+  });
+
+  // リセット
+  resetBtn.addEventListener('click', function(){
+    form.reset();
+    resultSection.classList.remove('is-visible');
+
+    var allResults = document.querySelectorAll('.result-card');
+    allResults.forEach(function(r){ r.classList.remove('is-active'); });
+
+    var allCards = document.querySelectorAll('.quiz-card');
+    allCards.forEach(function(c){ c.classList.remove('has-error'); });
+
+    var quizSection = document.getElementById('quiz');
+    if(quizSection){
+      quizSection.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+
+  // スクロールフェードイン
+  var fadeEls = document.querySelectorAll('.fade-in');
+  if('IntersectionObserver' in window){
+    var fadeObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    fadeEls.forEach(function(el){ fadeObserver.observe(el); });
+  } else {
+    fadeEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  // スムーズスクロール
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+    anchor.addEventListener('click', function(e){
+      var href = this.getAttribute('href');
+      if(href === '#') return;
+      var target = document.querySelector(href);
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>

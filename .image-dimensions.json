@@ -1,0 +1,18 @@
+{
+  "src/images/sawada-logo-wh.png": {
+    "width": 290,
+    "height": 38
+  },
+  "src/images/sawada-logo.png": {
+    "width": 290,
+    "height": 38
+  },
+  "src/sawada-profile.jpg": {
+    "width": 1920,
+    "height": 2880
+  },
+  "src/sawada_fav.png": {
+    "width": 28,
+    "height": 28
+  }
+}

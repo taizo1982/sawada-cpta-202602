@@ -28,6 +28,19 @@
   padding: 0;
 }
 
+/* Focus */
+a:focus, button:focus {
+  outline: 2px solid #3182ce;
+  outline-offset: 2px;
+}
+a:focus:not(:focus-visible), button:focus:not(:focus-visible) {
+  outline: none;
+}
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #3182ce;
+  outline-offset: 2px;
+}
+
 html {
   scroll-behavior: smooth;
 }

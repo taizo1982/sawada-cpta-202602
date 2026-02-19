@@ -49,10 +49,24 @@ async function checkTypography() {
         const rects = range.getClientRects();
 
         // 複数行ある場合、最終行の文字数をチェック
-        if (rects.length > 1) {
-          const lastRect = rects[rects.length - 1];
-          const avgCharWidth = rect.width / (text.length / rects.length);
-          const lastLineChars = Math.round(lastRect.width / avgCharWidth);
+        // rectをY座標でグループ化して視覚的な行を特定
+        const allRects = Array.from(rects).filter(r => r.width > 0 && r.height > 0);
+        if (allRects.length > 1) {
+          const lines = [];
+          for (const r of allRects) {
+            const existing = lines.find(l => Math.abs(l.top - r.top) < r.height * 0.5);
+            if (existing) {
+              existing.width += r.width;
+            } else {
+              lines.push({ top: r.top, width: r.width });
+            }
+          }
+          if (lines.length < 2) return;
+          const lastLine = lines[lines.length - 1];
+          const totalWidth = lines.reduce((sum, l) => sum + l.width, 0);
+          const textLen = text.replace(/\s/g, '').length;
+          const avgCharWidth = totalWidth / Math.max(textLen, 1);
+          const lastLineChars = Math.round(lastLine.width / avgCharWidth);
 
           if (lastLineChars <= 2 && lastLineChars > 0) {
             results.push({
